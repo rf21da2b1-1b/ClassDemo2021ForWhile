@@ -84,11 +84,58 @@ namespace ClassDemo2021ForWhile
                     Console.WriteLine(p);
                 }
             }
+
+            Console.WriteLine("Med telefon 11223344");
+            foreach (Person p in personer)
+            {
+                if (p.Tlf == "11223344")
+                {
+                    Console.WriteLine(p);
+                }
+            }
+
+
+            /*
+             * Dictionary
+             */
+            Dictionary<string, Person> personer2 = new Dictionary<string, Person>();
             
 
+            personer2.Add("12345678", new Person(12, "peter", "12345678"));
+            personer2.Add("87654321", new Person(13, "jakob", "87654321"));
+            personer2.Add("11223344", new Person(14, "charlotte", "11223344"));
+            personer2.Add("12123344",new Person(15, "anders", "12123344"));
+            personer2.Add("99001122", new Person(16, "henrik", "99001122"));
+            //personer2.Add(new Person(17, "vibeke", "33445566"));
+            personer2.Add("99887766",new Person(18, "mohammed", "99887766"));
+            //personer2.Add(new Person(19, "jens peter", "55443322"));
+            personer2.Add("88664422", new Person(1, "morten", "88664422"));
+            //personer2.Add(new Person(2, "nilma", "11335577"));
+            //personer2.Add(new Person(3, "michael", "22446688"));
+            //personer2.Add(new Person(4, "steen", "12213443"));
+            //personer2.Add(new Person(5, "martin", "77227488"));
+            //personer2.Add(new Person(6, "poul", "25398765"));
 
 
+            // alle
+            Console.WriteLine("dic alle");
+            foreach (Person p in personer2.Values)
+            {
+                Console.WriteLine(p);
+            }
 
+            Console.WriteLine("dic tlf");
+            Console.WriteLine(personer2["11223344"]);
+
+
+            Console.WriteLine("Dic, Kun dem der starter med m");
+            foreach (Person p in personer2.Values)
+            {
+                if (p.Navn.StartsWith("m"))
+                {
+                    Console.WriteLine(p);
+                }  
+            }
         }
     }
 }
